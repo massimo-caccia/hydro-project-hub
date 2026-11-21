@@ -105,7 +105,7 @@ export function reportMarkdown(report) {
  */
 export function reportBody(report) {
   return `<article class="report-paper">
-    <div class="report-letterhead"><span>COURANT / PROJECT INTELLIGENCE</span><span>WEEKLY BRIEFING</span></div>
+    <div class="report-letterhead"><div class="report-brand"><img src="./assets/hydro-quebec-logo.svg" alt="Hydro-Québec" width="200" height="65" /><span>COURANT<br>PROJECT INTELLIGENCE</span></div><span>WEEKLY BRIEFING<br>INDEPENDENT DEMO</span></div>
     <h2>${escapeHtml(report.name)}</h2><p class="muted">${escapeHtml(report.period)} · All amounts in CAD</p>
     <div class="report-summary"><h3>Executive summary</h3><p>${escapeHtml(report.narrative)}</p></div>
     <h3>Project updates</h3>${report.projects.map((project) => `<div class="report-project"><h4>${escapeHtml(project.name)} <span>${project.progress}%</span></h4><p>${escapeHtml(project.update)}</p><small>${project.id} · ${escapeHtml(project.owner)} · Maximo / Primavera P6</small></div>`).join("")}

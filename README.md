@@ -36,3 +36,15 @@ Deploy these static files at any path on a static web host. All application link
 ## Hosting
 
 The public demo is served by GitHub Pages from the `main` branch root of the standalone `massimo-caccia/hydro-project-hub` repository. Only this demo directory is published; the surrounding workspace is not included.
+
+## Visual identity references
+
+The demo uses Hydro-Québec’s public website palette: blue `#1224B8`, navy `#0F096C`, orange `#FF9B00`, and light blue `#E7F1FC`. Open Sans follows the body typography on its public site. These are implemented in local theme variables rather than importing the organization’s stylesheet.
+
+References inspected November 21, 2026:
+
+- [Hydro-Québec public website](https://www.hydroquebec.com/residential/)
+- [Public web styles](https://www.hydroquebec.com/design/proto-kit/css-snapshots/hq-styles-1.2.1.min.css)
+- [Official color wordmark](https://www.hydroquebec.com/images2016/logo-hydro-quebec-couleur.svg), saved as `assets/hydro-quebec-logo.svg`; its symbol is also used for the favicon. The marks belong to Hydro-Québec and are used here to identify this independent concept.
+
+The navigation and report letterhead visibly label the application as an independent demo.

@@ -65,12 +65,12 @@ export function icon(name, size = 20) {
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.projects}</svg>`;
 }
 
-/** Render the Courant wave mark.
+/** Render the public Hydro-Québec wordmark at its original aspect ratio.
  * @param {string} className - Optional visual class.
  * @returns {string} Decorative logo markup.
  */
 export function logo(className = "") {
-  return `<span class="brand-mark ${className}"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M6 12c6-8 10 8 16 0s9-5 9-5M4 20c6-8 10 8 16 0s9-5 9-5M6 28c6-8 10 8 16 0" stroke="currentColor" stroke-width="3.3" stroke-linecap="round"/></svg></span>`;
+  return `<span class="brand-mark ${className}"><img src="./assets/hydro-quebec-logo.svg" alt="" width="200" height="65" /></span>`;
 }
 
 /** Render a project status badge with a text label.

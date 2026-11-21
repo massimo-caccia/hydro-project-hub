@@ -20,8 +20,8 @@ export function shell(page, content, pending) {
     reports: "Reports",
     connections: "Connections",
   };
-  return `<aside class="sidebar"><a href="#overview" class="brand" aria-label="Courant home">${logo()}<span>courant<span class="brand-period">.</span></span></a>
-    <div class="workspace"><div class="workspace-avatar">HQ</div><div><strong>Hydro-Québec</strong><small>Concept workspace</small></div><span class="demo-tag">DEMO</span></div>
+  return `<aside class="sidebar"><a href="#overview" class="brand" aria-label="Hydro-Québec — Courant concept home">${logo()}</a>
+    <div class="workspace"><div class="workspace-avatar">${icon("bolt", 17)}</div><div><strong>Courant</strong><small>Project intelligence</small></div><span class="demo-tag">DEMO</span></div>
     <div class="nav-label">WORKSPACE</div><nav aria-label="Main navigation">${Object.entries(
       names,
     )
@@ -32,7 +32,7 @@ export function shell(page, content, pending) {
       .join("")}</nav>
     <div class="sidebar-note"><span class="small-wave">${icon("connections", 24)}</span><strong>Better, together.</strong><p>Four systems.<br>One connected perspective.</p><a href="#connections">Explore connections ${icon("arrow", 15)}</a></div>
     <div class="sidebar-bottom"><button data-action="about" class="quiet-button">${icon("info", 17)} About this demo</button><div class="profile"><span class="avatar mint">JD</span><div><strong>Jamie Dubois</strong><small>Portfolio manager · Demo</small></div></div></div>
-  </aside><div class="main-shell"><header class="topbar"><div class="breadcrumbs"><span class="mobile-brand">${logo()}</span><span>Workspace</span>${icon("chevron", 13)}<strong>${names[page]}</strong></div><div class="topbar-right"><span class="sample-label"><i></i> FICTIONAL DATA</span><button class="icon-button notifications" data-action="attention" aria-label="View ${pending} follow-ups">${icon("alert", 18)}${pending ? "<span></span>" : ""}</button><span class="avatar mint small">JD</span></div></header>
+  </aside><div class="main-shell"><header class="topbar"><div class="breadcrumbs"><span class="mobile-brand">${logo()}</span><span>Courant</span>${icon("chevron", 13)}<strong>${names[page]}</strong></div><div class="topbar-right"><span class="sample-label"><i></i> INDEPENDENT DEMO</span><button class="icon-button notifications" data-action="attention" aria-label="View ${pending} follow-ups">${icon("alert", 18)}${pending ? "<span></span>" : ""}</button><span class="avatar mint small">JD</span></div></header>
     <nav class="mobile-nav" aria-label="Mobile navigation">${Object.entries(
       names,
     )
@@ -99,7 +99,7 @@ export function overviewPage(state) {
   const pending = TASKS.filter(
     (task) => !state.reviewed.includes(task.id),
   ).length;
-  return `<div class="page-heading"><div><div class="eyebrow">YOUR CONNECTED WORKSPACE</div><h1>A clear view of what’s next.</h1><p>Projects, people, and progress. Finally on the same page.</p></div><span class="date-chip">${icon("calendar", 16)} Nov 16–20, 2026</span></div>
+  return `<div class="page-heading"><div><div class="eyebrow">HYDRO-QUÉBEC · PROJECT INTELLIGENCE</div><h1>Your projects. One connected view.</h1><p>Budgets, maintenance, and milestones — together in one workspace. Fictional demo data.</p></div><span class="date-chip">${icon("calendar", 16)} Nov 16–20, 2026</span></div>
     <section class="briefing-banner"><div class="briefing-copy"><span class="briefing-icon">${icon("spark", 24)}</span><div><span class="eyebrow">YOUR WEEK, CONNECTED</span><h2>The data is in. Your briefing is a click away.</h2><p>6 projects · 4 source systems · One ready-to-review report</p></div></div><button class="button primary" data-action="quick-report">${icon("reports", 17)} Generate weekly report ${icon("arrow", 17)}</button><div class="banner-rings" aria-hidden="true"></div></section>
     ${metricCards(pending)}<div class="insight-grid">${budgetChart()}<section class="panel attention-panel"><div class="section-heading"><div><h2>A little attention goes a long way.</h2><p>Follow-ups that keep projects moving</p></div><span class="count-badge">${pending}</span></div>${attentionList(state.reviewed)}<button class="panel-footer-button" data-action="attention">Review all follow-ups ${icon("arrow", 16)}</button></section></div>
     <section class="panel portfolio-panel"><div class="section-heading"><div><h2>Your project portfolio</h2><p>A shared view, from generation to distribution.</p></div><a class="text-link" href="#projects">View all projects ${icon("arrow", 16)}</a></div>${projectTable(PROJECTS)}</section>
