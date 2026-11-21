@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#163c35" />
+    <meta
+      name="description"
+      content="Courant: an interactive, independent demo of connected project reporting for Hydro-Québec. Explore fictional projects, source records, and automated weekly reports."
+    />
+    <title>Courant — Connected project intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="app"></div>
+    <dialog id="detail-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      >This interactive demo requires JavaScript. All project data is
+      fictional.</noscript
+    >
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
